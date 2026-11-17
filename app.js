@@ -12,7 +12,7 @@
   function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('show'),1800); }
 
   function chips(){
-    $('types').innerHTML = TYPES.map(([k,l]) => `<button type="button" class="chip" data-type="${k}" aria-pressed="${state.type===k}">${l}</button>`).join('');
+    $('types').innerHTML = TYPES.filter(([k]) => !(k==='code' && state.noCodes)).map(([k,l]) => `<button type="button" class="chip" data-type="${k}" aria-pressed="${state.type===k}">${l}</button>`).join('');
     const cats = ['All', ...new Set(state.deals.map(d => d.category))].sort((a,b)=> a==='All'?-1:b==='All'?1:a.localeCompare(b));
     $('cats').innerHTML = cats.map(c => `<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${state.cat===c}">${esc(c)}</button>`).join('');
   }
@@ -24,7 +24,7 @@
       <div class="card-top"><span class="cat">${esc(d.category)}</span>${typeTag}</div>
       <p class="off">${esc(d.offer)}</p>
       <h2>${esc(d.title)}</h2>
-      <p class="brand">${esc(d.brand)}</p>
+      ${d.brand ? `<p class="brand">${esc(d.brand)}</p>` : ''}
       <p class="note">${esc(d.note||'')}</p>
       ${code}
       <div class="actions"><a class="btn primary" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored">Get deal on Amazon</a></div>
@@ -62,7 +62,9 @@
     const dt = new Date(data.updated);
     $('updated').textContent = 'Updated ' + dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ', ' + dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     countUp($('count'), state.deals.length);
-    countUp($('codes'), state.deals.filter(d=>d.code).length);
+    const nCodes = state.deals.filter(d=>d.code).length;
+    countUp($('codes'), nCodes);
+    if (!nCodes) { $('codes').parentElement.hidden = true; state.noCodes = true; }
     countUp($('coupons'), state.deals.filter(d=>d.type==='coupon' && !d.code).length);
     render();
   }).catch(() => { grid.innerHTML=''; $('empty').hidden=false; $('empty').querySelector('p').textContent='Deals could not load right now. Please refresh the page.'; });
