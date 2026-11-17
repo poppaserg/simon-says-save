@@ -20,7 +20,11 @@
   function card(d){
     const typeTag = d.code ? '<span class="tag code">Promo code</span>' : d.type==='coupon' ? '<span class="tag coupon">Clip coupon</span>' : d.pick ? '<span class="tag pick">Top pick</span>' : '<span class="tag">Price drop</span>';
     const code = d.code ? `<div class="codebox"><code>${esc(d.code)}</code><button type="button" class="btn small" data-copy="${esc(d.code)}" aria-label="Copy code ${esc(d.code)}">Copy code</button></div>` : '';
+    const media = d.image
+      ? `<div class="art photo"><img src="${esc(d.image)}" alt="${esc(d.title)}" loading="lazy" width="400" height="300"></div>`
+      : window.CAT_ART(d.category);
     return `<article class="card">
+      <a class="media" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored" tabindex="-1" aria-hidden="true">${media}</a>
       <div class="card-top"><span class="cat">${esc(d.category)}</span>${typeTag}</div>
       <p class="off">${esc(d.offer)}</p>
       <h2>${esc(d.title)}</h2>
