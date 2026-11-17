@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simon Says Save: Today's Amazon Deals and Coupons</title>
+<meta name="description" content="Hand picked Amazon deals, clip coupons and promo codes, refreshed every morning.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css?v=1">
+</head>
+<body>
+<a class="skip" href="#deals">Skip to deals</a>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="#" aria-label="Simon Says Save home">Simon Says <span>Save</span></a>
+    <p class="live"><span class="dot" aria-hidden="true"></span><span id="updated">Updated today</span></p>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">Black Friday is almost here</p>
+    <h1>Today's Amazon deals, picked and checked every morning.</h1>
+    <p class="lede">Limited time deals, clip coupons and promo codes in one list. Expired offers come off the list each day, so what you see here is what's running now.</p>
+    <div class="stats" aria-live="polite">
+      <div><strong id="count">0</strong><span>live deals</span></div>
+      <div><strong id="codes">0</strong><span>promo codes</span></div>
+      <div><strong id="coupons">0</strong><span>clip coupons</span></div>
+    </div>
+  </section>
+
+  <section class="tools wrap" aria-label="Filter deals">
+    <label class="search">
+      <span class="sr">Search deals</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="q" type="search" placeholder="Search blenders, headphones, baby gates" autocomplete="off">
+    </label>
+    <div class="chips" id="types" role="group" aria-label="Deal type"></div>
+    <div class="chips cats" id="cats" role="group" aria-label="Category"></div>
+  </section>
+
+  <section class="help wrap">
+    <details>
+      <summary>How to use a promo code</summary>
+      <ol>
+        <li>Tap Copy code on the deal.</li>
+        <li>Tap Get deal to open the product on Amazon and add it to your cart.</li>
+        <li>At checkout, find "Add a gift card or promotion code," paste the code and tap Apply.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>How clip coupons work</summary>
+      <p>On the product page, check the box next to the coupon before adding the item to your cart. The savings show up at checkout. No code needed.</p>
+    </details>
+  </section>
+
+  <section id="deals" class="wrap" aria-label="Today's deals">
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <p><strong>No deals match that.</strong> Try a different word or clear the filters.</p>
+      <button type="button" class="btn ghost" id="reset">Clear filters</button>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="disclose">As an Amazon Associate I earn from qualifying purchases. Buying through these links doesn't change your price.</p>
+    <p>Discounts, coupons and codes can change or end at any time. Always check the final price on Amazon before you buy.</p>
+    <p class="small">Simon Says Save is independent and is not affiliated with or endorsed by Amazon.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./app.js?v=1" defer></script>
+</body>
+</html>
