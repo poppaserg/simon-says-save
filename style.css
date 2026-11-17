@@ -124,3 +124,5 @@ h1{font-family:var(--display);font-weight:800;font-size:var(--text-2xl);line-hei
 @keyframes pop{50%{transform:scale(1.18)}}
 .chip .heart{display:inline-block;width:1rem;height:1rem;vertical-align:-.15em;margin-right:.35rem;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linejoin:round}
 .chip .n{display:inline-grid;place-items:center;min-width:1.35rem;height:1.35rem;padding:0 .3rem;margin-left:.35rem;border-radius:999px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700}
+.desc{font-size:var(--text-sm);line-height:1.5;color:oklch(32% .02 50);margin:0}
+.note{font-weight:600;color:var(--accent-ink)}

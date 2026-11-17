@@ -37,9 +37,10 @@
       <p class="off">${esc(d.offer)}</p>
       <h2>${esc(d.title)}</h2>
       ${d.brand ? `<p class="brand">${esc(d.brand)}</p>` : ''}
+      ${d.desc ? `<p class="desc">${esc(d.desc)}</p>` : ''}
       <p class="note">${esc(d.note||'')}</p>
       ${code}
-      <div class="actions"><a class="btn primary" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored">Get deal on Amazon</a></div>
+      <div class="actions"><a class="btn primary" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored">See today's price on Amazon</a></div>
     </article>`;
   }
 
@@ -48,7 +49,7 @@
     const list = state.deals.filter(d =>
       (state.type==='all' || (state.type==='saved' ? saved.has(d.asin) : state.type==='code' ? !!d.code : d.type===state.type && !d.code)) &&
       (state.cat==='All' || d.category===state.cat) &&
-      (!q || `${d.title} ${d.brand} ${d.category}`.toLowerCase().includes(q)));
+      (!q || `${d.title} ${d.brand} ${d.category} ${d.desc||''}`.toLowerCase().includes(q)));
     grid.innerHTML = list.map(card).join('');
     $('empty').hidden = list.length>0;
     $('empty').querySelector('p').innerHTML = state.type==='saved' && !q && state.cat==='All'
