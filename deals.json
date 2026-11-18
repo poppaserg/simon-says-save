@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T07:30:00-05:00",
+  "updated": "2026-11-18T07:15:00-05:00",
   "tag": "sergiosimon-20",
   "deals": [
     {
@@ -426,6 +426,210 @@
       "code": null,
       "pick": false,
       "desc": "A stock up pack of 16 family rolls, equal to 40 regular rolls. Quick Size sheets tear to the size you need and are twice as absorbent as the leading ordinary brand."
+    },
+    {
+      "asin": "B0F3DPXQP1",
+      "title": "Yankee Candle Balsam and Cedar, 22 oz Jar",
+      "brand": "Yankee Candle",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Limited time deal",
+      "code": null,
+      "pick": false,
+      "desc": "The classic Christmas tree scent of pine balsam and cedarwood in a large jar candle. Burns for up to 150 hours and makes an easy hostess gift."
+    },
+    {
+      "asin": "B0F3DQZ193",
+      "title": "Yankee Candle Christmas Cookie, 22 oz Jar",
+      "brand": "Yankee Candle",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Limited time deal",
+      "code": null,
+      "pick": false,
+      "desc": "Smells like fresh baked holiday cookies, with warm sugar and creamy vanilla notes. A large jar that burns for up to 150 hours."
+    },
+    {
+      "asin": "B0G2T5PP7W",
+      "title": "LEGO Up Scaled Santa Minifigure 40820",
+      "brand": "LEGO",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Early Black Friday deal",
+      "code": null,
+      "pick": false,
+      "desc": "A big buildable Santa styled like a classic LEGO minifigure, with his red suit and fluffy white beard. Fun to build together, then display all season."
+    },
+    {
+      "asin": "B0G2KJ8V5R",
+      "title": "LEGO Snowman Ornaments 40812",
+      "brand": "LEGO",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "21% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "Build two cute LEGO snowmen, one in a top hat with a candy cane and one in glasses and a beanie, then hang them on the tree. A great stocking stuffer."
+    },
+    {
+      "asin": "B009LA2DAU",
+      "title": "National Tree Company 7.5 ft Kingswood Fir Slim Tree",
+      "brand": "National Tree Company",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "62% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": true,
+      "desc": "A tall, slim 7.5 foot artificial fir with a 30 inch base, perfect for smaller rooms and corners. Hinged branches drop into place for quick setup, and the needles are fire resistant."
+    },
+    {
+      "asin": "B00A8UPX0Y",
+      "title": "National Tree Company 9 ft Dunhill Fir Full Tree",
+      "brand": "National Tree Company",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "63% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A full, lifelike 9 foot artificial fir with a wide 66 inch base for big rooms and high ceilings. Unlit so you can use your own lights, with hinged branches for easy setup."
+    },
+    {
+      "asin": "B09DJB8ZXM",
+      "title": "Best Choice Products 6 ft Prelit Pine Tree",
+      "brand": "Best Choice Products",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A 6 foot pine tree with 250 LED lights already on it and three light modes, including the twinkle effect that went viral. Comes with a sturdy metal stand."
+    },
+    {
+      "asin": "B09Z5YT94K",
+      "title": "Warm White Christmas Lights, 100 Count",
+      "brand": "TW SHINE",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "70% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A 20 foot string of 100 warm white mini lights for trees, windows and porches. Works indoors or out, and you can connect up to 5 strings end to end."
+    },
+    {
+      "asin": "B0995QBK44",
+      "title": "Dazzle Bright 300 LED String Lights, 100 ft",
+      "brand": "Dazzle Bright",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "43% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A long 100 foot string with 300 LEDs and 8 light modes, from steady glow to twinkle. Safe low voltage, water resistant and connects up to 4 strings."
+    },
+    {
+      "asin": "B0FJ7KVT9X",
+      "title": "24 inch Prelit Front Door Wreath",
+      "brand": "UMEEUTOO",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "33% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A full 24 inch wreath with built in LED lights and 8 light shows. Runs on batteries with an auto timer, so it works on any door, porch or mantel with no outlet."
+    },
+    {
+      "asin": "B0B9G5DMXJ",
+      "title": "7 ft Inflatable Christmas Tree with Presents",
+      "brand": "COMIN",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "36% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A 7 foot blow up Christmas tree and gift box display with built in LEDs for the front yard. Inflates fast and comes with stakes, ropes and a storage bag."
+    },
+    {
+      "asin": "B09XK1KFYV",
+      "title": "Swarovski 2026 Annual Edition Ornament",
+      "brand": "Swarovski",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "25% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "This year's collectible Swarovski snowflake, cut with 192 sparkling facets and hung on a green ribbon. A keepsake gift that starts or adds to a yearly tradition."
+    },
+    {
+      "asin": "B0G4XGZQKN",
+      "title": "Hallmark Harry Potter Sorting Hat Ornament",
+      "brand": "Hallmark",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A Hallmark ornament of the Sorting Hat sitting on scarves from all four Hogwarts houses. A fun gift for any Harry Potter fan."
+    },
+    {
+      "asin": "B07XMDMYL9",
+      "title": "JOYIN 6 Pack Knit Christmas Stockings, 18 inch",
+      "brand": "JOYIN",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "32% off",
+      "note": "Limited time deal, ends soon",
+      "code": null,
+      "pick": false,
+      "desc": "Six large cable knit stockings in cozy holiday patterns like snowflakes, reindeer and snowmen. Thick, stretchy yarn holds plenty of stocking stuffers for the whole family."
+    },
+    {
+      "asin": "B00EJ2DZJI",
+      "title": "National Tree Company 9 ft Prelit Colonial Fir Garland",
+      "brand": "National Tree Company",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Early Black Friday deal",
+      "code": null,
+      "pick": false,
+      "desc": "A full 9 foot garland with lights already strung and pine cones mixed in. Great for the mantel, staircase or front door."
+    },
+    {
+      "asin": "B081665FNX",
+      "title": "Lighted Star Tree Topper with Snowflake Projector",
+      "brand": "DG Direct",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "33% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "A glittery silver star topper that fits most trees and projects moving snowflakes across the room. Plugs in with a long cord."
+    },
+    {
+      "asin": "B08HYRFP6W",
+      "title": "Gingerbread Man Ornaments, 16 Pieces",
+      "brand": "kockuu",
+      "category": "Christmas",
+      "type": "deal",
+      "offer": "41% off",
+      "note": "Holiday price drop",
+      "code": null,
+      "pick": false,
+      "desc": "Twelve gingerbread people and four gingerbread houses made of soft rubber, so they won't break if kids help decorate. Strings are included for hanging."
     }
   ]
 }
