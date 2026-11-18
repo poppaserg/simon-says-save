@@ -10,9 +10,10 @@ window.CAT_ART = (() => {
     Kitchen: '<path d="M4 11h16v3a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6z"/><path d="M2 11h2M20 11h2M9 4c0 1.5 1 1.5 1 3M13 4c0 1.5 1 1.5 1 3"/>',
     'Smart Home': '<path d="M4 11l8-7 8 7v9H4z"/><path d="M9 15.5a4.2 4.2 0 0 1 6 0M10.7 17.6a1.8 1.8 0 0 1 2.6 0"/><path d="M12 19.5h0" stroke-width="2.2"/>',
     Tools: '<path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2 2 0 0 1-3-3l7.5-7.5"/><path d="M3 21l3-3M5 4l4 4M4 9l5-5"/>',
+    Drinks: '<path d="M8 4h8l-.6 2H8.6z"/><path d="M8.6 6l-.6 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-.6-2"/><path d="M8 11h8M11 14h0M13 16h0M12 12.8h0" stroke-width="1.6"/>',
     _: '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>'
   };
-  const HUE = { Baby: 240, Beauty: 350, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, _: 30 };
+  const HUE = { Baby: 240, Beauty: 350, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, Drinks: 175, _: 30 };
   return cat => {
     const k = P[cat] ? cat : '_', h = HUE[k];
     return `<div class="art" style="--h:${h}" aria-hidden="true">

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T09:30:00-05:00",
+  "updated": "2026-11-18T07:30:00-05:00",
   "tag": "sergiosimon-20",
   "deals": [
     {
@@ -9,7 +9,7 @@
       "category": "Home",
       "type": "deal",
       "offer": "10% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "pick": true,
       "desc": "Eight walnut wood slat panels, each about 47 by 24 inches, covering roughly 62 square feet. They cut echo and give any room a warm, modern accent wall. Screws are included, or you can use adhesive."
@@ -35,7 +35,7 @@
       "offer": "64% off",
       "note": "Early Black Friday deal",
       "code": null,
-      "pick": true,
+      "pick": false,
       "desc": "Stream in 4K with HDR10+ on any TV with an HDMI port. Netflix, Prime Video, Disney+, YouTube and thousands more apps in one place, with Alexa voice search."
     },
     {
@@ -56,7 +56,7 @@
       "category": "Home",
       "type": "deal",
       "offer": "55% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "desc": "A lightweight cordless vacuum with up to 40 minutes of run time. The Motorbar head cleans every floor type and untangles hair as it goes, and a mini brush handles stairs and couches."
     },
@@ -111,7 +111,7 @@
       "category": "Electronics",
       "type": "deal",
       "offer": "35% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "desc": "Ultralight on ear wireless headphones with rich Beats sound and personalized spatial audio. Plush cushions and an adjustable fit for all day comfort, with up to 50 hours of battery life."
     },
@@ -132,7 +132,7 @@
       "brand": "Amazon",
       "category": "Kids",
       "type": "deal",
-      "offer": "32% off",
+      "offer": "33% off",
       "note": "Early Black Friday deal",
       "code": null,
       "desc": "An 11 inch kids tablet with a sharp 2.5K screen and 8 GB of RAM for ages 6 to 12. Includes a protective case, a year of ad free Kids+ content and easy parental controls."
@@ -144,7 +144,7 @@
       "category": "Kitchen",
       "type": "deal",
       "offer": "30% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "desc": "The classic 5 quart tilt head stand mixer with 10 speeds and sturdy metal build. Big enough to mix about 9 dozen cookies in one batch, and the bowl is dishwasher safe."
     },
@@ -155,7 +155,7 @@
       "category": "Smart Home",
       "type": "deal",
       "offer": "56% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "desc": "A Wi Fi touchscreen thermostat you can control from your phone or with Alexa. Set a 7 day schedule, match the screen color to your room and save on energy bills."
     },
@@ -187,7 +187,7 @@
       "brand": "Cideny",
       "category": "Baby",
       "type": "coupon",
-      "offer": "13% off",
+      "offer": "12% off",
       "note": "Clip the coupon on the product page",
       "code": null,
       "desc": "A pressure mounted baby and pet gate that fits openings from 29 to 40 inches. It closes by itself, has a dual lock, installs with no tools and has a low threshold for strollers."
@@ -243,9 +243,177 @@
       "category": "Electronics",
       "type": "deal",
       "offer": "18% off",
-      "note": "Limited time deal",
+      "note": "Limited time deal, ends soon",
       "code": null,
       "desc": "Sony's newest flagship noise cancelling headphones, with a faster processor and 12 microphones for even quieter listening. Tuned with mastering engineers and built for clear calls."
+    },
+    {
+      "asin": "B0FCMNKFFX",
+      "title": "Breville Smart Oven Air Fryer Pro, Black Truffle",
+      "brand": "Breville",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "20% off",
+      "note": "Limited time deal",
+      "code": null,
+      "pick": false,
+      "desc": "A countertop oven that roasts, bakes, air fries and dehydrates. Five smart heating elements and a two speed convection fan cook evenly and crisp up fries without a separate air fryer."
+    },
+    {
+      "asin": "B0DFNFX2K7",
+      "title": "Amazon Ember 55 inch 4 Series Fire TV",
+      "brand": "Amazon",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "39% off",
+      "note": "Early Black Friday deal",
+      "code": null,
+      "pick": true,
+      "desc": "A 55 inch 4K smart TV with HDR10+, Wi Fi 6 and a fast quad core processor. Fire TV and an Alexa voice remote are built in, so all your streaming apps are ready to go."
+    },
+    {
+      "asin": "B091G64GVK",
+      "title": "Amazon eero Pro 6E Mesh Wi Fi System",
+      "brand": "eero",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Early Black Friday deal",
+      "code": null,
+      "pick": false,
+      "desc": "A mesh Wi Fi system that blankets up to 6,000 square feet with fast, steady coverage. Supports internet plans up to 2.5 Gbps, so the whole family can stream and game without dead spots."
+    },
+    {
+      "asin": "B003OXNBYC",
+      "title": "KitchenAid Classic 4.5 Qt Stand Mixer, Onyx Black",
+      "brand": "KitchenAid",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Early Black Friday deal",
+      "code": null,
+      "pick": false,
+      "desc": "The sturdy metal KitchenAid tilt head mixer in a smaller 4.5 quart size, with 10 speeds. Mixes up to 8 dozen cookies in one batch, and the steel bowl is dishwasher safe."
+    },
+    {
+      "asin": "B0FQFB8FMG",
+      "title": "Apple AirPods Pro 3",
+      "brand": "Apple",
+      "category": "Electronics",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "Apple's newest earbuds with up to 2x more noise cancelling than AirPods Pro 2, richer sound, built in heart rate tracking for workouts and Live Translation with iPhone."
+    },
+    {
+      "asin": "B0GJTFXNRX",
+      "title": "Apple AirTag, 2nd Generation",
+      "brand": "Apple",
+      "category": "Electronics",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "Clip it to your keys, wallet or bag and find it in the Find My app. The new version has a 50% louder speaker, longer range and step by step directions on iPhone and Apple Watch."
+    },
+    {
+      "asin": "B0FK1LF5PM",
+      "title": "Owala FreeSip Water Bottle, 32 oz",
+      "brand": "Owala",
+      "category": "Kitchen",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "The bottle everyone is carrying: sip through the built in straw or tilt to swig. Triple wall insulation keeps drinks cold up to 24 hours, and the lid locks so it won't leak."
+    },
+    {
+      "asin": "B0CYJBB2JQ",
+      "title": "bella Slim 2 Slice Toaster, Oatmilk",
+      "brand": "bella",
+      "category": "Kitchen",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "A slim toaster that fits on any counter, with one extra wide 10 inch slot for two slices, bagels or thick bread. Six shade settings and a slide out crumb tray."
+    },
+    {
+      "asin": "B074PVTPBW",
+      "title": "Mighty Patch Original Pimple Patches, 36 Ct",
+      "brand": "Mighty Patch",
+      "category": "Beauty",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "Clear hydrocolloid patches that flatten pimples overnight with no popping. They stay on while you sleep and peel off easily in the morning."
+    },
+    {
+      "asin": "B08KT2Z93D",
+      "title": "eos Shea Better Body Lotion, Vanilla Cashmere",
+      "brand": "eos",
+      "category": "Beauty",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "A fast absorbing body lotion with shea butter and vitamin E for 24 hours of moisture. Non greasy, with the cozy vanilla cashmere scent that went viral."
+    },
+    {
+      "asin": "B00TPMDNSU",
+      "title": "Play Doh Starter Set, 9 Pieces",
+      "brand": "Play Doh",
+      "category": "Kids",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "A classic starter kit with 4 cans of Play Doh and 9 tools to cut, stamp and roll, all packed in a reusable tote. Great for ages 3 and up and easy stocking stuffer."
+    },
+    {
+      "asin": "B00NHQFA1I",
+      "title": "LEGO Classic Medium Creative Brick Box",
+      "brand": "LEGO",
+      "category": "Kids",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "A big tub of colorful bricks plus windows, eyes, 18 tires and a baseplate, so kids can build anything they imagine. Works with every other LEGO set."
+    },
+    {
+      "asin": "B0FHKZ4BP1",
+      "title": "Connect 4, 2025 Edition",
+      "brand": "Hasbro",
+      "category": "Kids",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "The classic four in a row game, now with a score tracker and a fold up case that stores every disc. Quick to set up and fun for ages 6 through adults."
+    },
+    {
+      "asin": "B079VP6DH5",
+      "title": "Bounty Quick Size Paper Towels, 16 Family Rolls",
+      "brand": "Bounty",
+      "category": "Home",
+      "type": "best",
+      "offer": "Best seller",
+      "note": "On Amazon's Best Sellers list today",
+      "code": null,
+      "pick": false,
+      "desc": "A stock up pack of 16 family rolls, equal to 40 regular rolls. Quick Size sheets tear to the size you need and are twice as absorbent as the leading ordinary brand."
     }
   ]
 }

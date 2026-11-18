@@ -126,3 +126,4 @@ h1{font-family:var(--display);font-weight:800;font-size:var(--text-2xl);line-hei
 .chip .n{display:inline-grid;place-items:center;min-width:1.35rem;height:1.35rem;padding:0 .3rem;margin-left:.35rem;border-radius:999px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700}
 .desc{font-size:var(--text-sm);line-height:1.5;color:oklch(32% .02 50);margin:0}
 .note{font-weight:600;color:var(--accent-ink)}
+.tag.best{background:oklch(90% .07 85);color:oklch(35% .08 70)}
