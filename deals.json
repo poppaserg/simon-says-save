@@ -35,7 +35,7 @@
       "offer": "40% off",
       "note": "Early Black Friday deal",
       "code": null,
-      "pick": true,
+      "pick": false,
       "desc": "A powerful 2 HP blender with a 64 oz container and laser cut steel blades. It handles smoothies, frozen fruit, nut butters and even hot soups. Comes with the tamper."
     },
     {
