@@ -12,7 +12,7 @@
 
   const link = asin => `https://www.amazon.com/dp/${asin}?tag=${TAG}&linkCode=ll1`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const TYPES = [['all','All deals'],['saved','Saved'],['code','Promo codes'],['coupon','Clip coupons'],['deal','Price drops'],['best','Best sellers']];
+  const TYPES = [['all','All deals'],['saved','Saved'],['code','Promo codes'],['coupon','Clip coupons'],['deal','Price drops'],['best','Best sellers'],['fav',"Simon's picks"]];
 
   function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('show'),1800); }
 
@@ -23,7 +23,7 @@
   }
 
   function card(d){
-    const typeTag = d.code ? '<span class="tag code">Promo code</span>' : d.type==='coupon' ? '<span class="tag coupon">Clip coupon</span>' : d.type==='best' ? '<span class="tag best">Best seller</span>' : d.pick ? '<span class="tag pick">Top pick</span>' : '<span class="tag">Price drop</span>';
+    const typeTag = d.code ? '<span class="tag code">Promo code</span>' : d.type==='coupon' ? '<span class="tag coupon">Clip coupon</span>' : d.type==='fav' ? '<span class="tag fav">Simon\'s pick</span>' : d.type==='best' ? '<span class="tag best">Best seller</span>' : d.pick ? '<span class="tag pick">Top pick</span>' : '<span class="tag">Price drop</span>';
     const code = d.code ? `<div class="codebox"><code>${esc(d.code)}</code><button type="button" class="btn small" data-copy="${esc(d.code)}" aria-label="Copy code ${esc(d.code)}">Copy code</button></div>` : '';
     const media = d.image
       ? `<div class="art photo"><img src="${esc(d.image)}" alt="${esc(d.title)}" loading="lazy" width="400" height="300"></div>`
