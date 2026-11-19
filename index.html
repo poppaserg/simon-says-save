@@ -2,42 +2,73 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simon Says Save: Today's Amazon Deals and Coupons</title>
-<meta name="description" content="Hand picked Amazon deals, clip coupons and promo codes, refreshed every morning.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>Simon Says Save: Black Friday Amazon Deals and Promo Codes</title>
+<meta name="description" content="Hand picked Amazon Black Friday deals, clip coupons and promo codes, refreshed every morning.">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css?v=7">
+<link rel="stylesheet" href="./style.css?v=8">
 </head>
 <body>
 <a class="skip" href="#deals">Skip to deals</a>
+
 <header class="top">
   <div class="wrap top-in">
-    <a class="mark" href="#" aria-label="Simon Says Save home">Simon Says <span>Save</span></a>
-    <p class="live"><span class="dot" aria-hidden="true"></span><span id="updated">Updated today</span></p>
-  </div>
-</header>
-
-<main>
-  <section class="hero wrap">
-    <p class="eyebrow">Black Friday is almost here</p>
-    <h1>Today's Amazon deals, picked and checked every morning.</h1>
-    <p class="lede">Limited time deals, clip coupons and promo codes in one list. Expired offers come off the list each day, so what you see here is what's running now.</p>
-    <div class="stats" aria-live="polite">
-      <div><strong id="count">0</strong><span>live deals</span></div>
-      <div><strong id="codes">0</strong><span>promo codes</span></div>
-      <div><strong id="coupons">0</strong><span>clip coupons</span></div>
-    </div>
-  </section>
-
-  <section class="tools wrap" aria-label="Filter deals">
+    <a class="mark" href="#" aria-label="Simon Says Save home">S<span>S</span>S</a>
     <label class="search">
       <span class="sr">Search deals</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-      <input id="q" type="search" placeholder="Search blenders, headphones, baby gates" autocomplete="off">
+      <input id="q" type="search" placeholder="Search air fryer, Levi's, thermostat" autocomplete="off">
     </label>
+    <button type="button" class="savedpill" data-type="saved" aria-label="Saved deals">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+      <span id="savedN">0</span>
+    </button>
+  </div>
+  <nav class="wrap quick" aria-label="Shortcuts">
+    <button type="button" class="qchip" data-type="code"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Amazon codes</button>
+    <button type="button" class="qchip" data-type="coupon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z"/><path d="M10 7v12" stroke-dasharray="2 2"/></svg>Clip coupons</button>
+    <a class="qchip" href="#filters"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Categories</a>
+    <a class="qchip" href="#drops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Biggest drops</a>
+  </nav>
+</header>
+
+<main>
+  <section class="panels wrap" aria-label="Featured collections">
+    <div class="rail" id="panels"></div>
+  </section>
+
+  <section class="wrap">
+    <a class="live-banner" href="#deals">
+      <div>
+        <p class="lb-title">Black Friday Deals Are Live</p>
+        <div class="lb-row">
+          <p class="lb-stat"><strong id="count">0</strong> deals<span>are live now</span></p>
+          <p class="lb-stat lb-cd"><span>Sale ends in</span><strong id="countdown">--</strong></p>
+        </div>
+      </div>
+      <p class="lb-meta" id="updated">Updated today</p>
+    </a>
+  </section>
+
+  <section class="wrap" id="drops" aria-labelledby="drops-h">
+    <div class="sec-h"><h2 id="drops-h">Biggest price drops</h2><button type="button" class="viewall" data-sort="drop">View all <span aria-hidden="true">›</span></button></div>
+    <div class="rail rank" id="rank"></div>
+  </section>
+
+  <section class="wrap" id="filters" aria-label="Filter deals">
+    <div class="sec-h"><h2>All deals</h2><p class="muted small"><span id="codes">0</span> codes · <span id="coupons">0</span> coupons</p></div>
     <div class="chips" id="types" role="group" aria-label="Deal type"></div>
     <div class="chips cats" id="cats" role="group" aria-label="Category"></div>
+  </section>
+
+  <section id="deals" class="wrap" aria-label="Deals">
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden>
+      <p><strong>No deals match that.</strong> Try a different word or clear the filters.</p>
+      <button type="button" class="btn ghost" id="reset">Clear filters</button>
+    </div>
   </section>
 
   <section class="help wrap">
@@ -54,14 +85,6 @@
       <p>On the product page, check the box next to the coupon before adding the item to your cart. The savings show up at checkout. No code needed.</p>
     </details>
   </section>
-
-  <section id="deals" class="wrap" aria-label="Today's deals">
-    <div class="grid" id="grid" aria-live="polite"></div>
-    <div class="empty" id="empty" hidden>
-      <p><strong>No deals match that.</strong> Try a different word or clear the filters.</p>
-      <button type="button" class="btn ghost" id="reset">Clear filters</button>
-    </div>
-  </section>
 </main>
 
 <footer class="foot">
@@ -72,8 +95,16 @@
   </div>
 </footer>
 
+<nav class="tabbar" aria-label="Main">
+  <button type="button" data-tab="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Home</button>
+  <button type="button" data-tab="bf" class="bf"><span class="bfword">Black<br>Friday</span>Deals</button>
+  <button type="button" data-tab="drops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Trending</button>
+  <button type="button" data-tab="codes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Codes</button>
+  <button type="button" data-tab="saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Saved</button>
+</nav>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="./art.js?v=3"></script>
-<script src="./app.js?v=8" defer></script>
+<script src="./art.js?v=4"></script>
+<script src="./app.js?v=9" defer></script>
 </body>
 </html>
