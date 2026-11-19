@@ -93,10 +93,14 @@
 
   function render(){
     const q = state.q.trim().toLowerCase();
+    // Match every word, ignoring plurals (thermostats -> thermostat) and extra punctuation.
+    const stem = w => w.replace(/[^a-z0-9$%]/g,'').replace(/(ies)$/,'y').replace(/(es|s)$/,'');
+    const words = q.replace(/wi[\s-]?fi/g,'wifi').split(/\s+/).map(stem).filter(Boolean);
+    const hay = d => `${d.title} ${d.brand} ${d.category} ${d.desc||''} ${d.note||''}`.toLowerCase().replace(/wi[\s-]?fi/g,'wifi').replace(/[^a-z0-9$% ]/g,' ');
     let list = state.deals.filter(d =>
       (state.type==='all' || (state.type==='saved' ? saved.has(d.asin) : state.type==='code' ? !!d.code : d.type===state.type && !d.code)) &&
       (state.cat==='All' || d.category===state.cat) &&
-      (!q || `${d.title} ${d.brand} ${d.category} ${d.desc||''}`.toLowerCase().includes(q)));
+      (!words.length || (h => words.every(w => h.includes(w)))(hay(d))));
     if (state.sort==='drop') list = [...list].sort((a,b)=>pct(b)-pct(a));
     grid.innerHTML = list.map(card).join('');
     $('empty').hidden = list.length>0;
@@ -126,6 +130,7 @@
     }
     else if (b.dataset.sort){ state.sort=b.dataset.sort; state.type='all'; state.cat='All'; render(); go('filters'); }
     else if (b.dataset.type){ state.type = (state.type===b.dataset.type && b.classList.contains('qchip')) ? 'all' : b.dataset.type; render(); if (!b.classList.contains('chip')) go('filters'); }
+    else if (b.dataset.q){ state.q=b.dataset.q; $('q').value=b.dataset.q; state.type='all'; state.cat='All'; render(); go('filters'); }
     else if (b.dataset.cat){ state.cat=b.dataset.cat; render(); }
     else if (b.dataset.copy){
       const c=b.dataset.copy;

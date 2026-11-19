@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T11:45:00-05:00",
+  "updated": "2026-11-19T12:50:00-05:00",
   "tag": "sergiosimon-20",
   "deals": [
     {
@@ -54,8 +54,8 @@
       "brand": "ecobee",
       "category": "Smart Home",
       "type": "deal",
-      "offer": "Holiday price drop",
-      "note": "Price changes often, check today's price on Amazon",
+      "offer": "Up to $50 off",
+      "note": "ecobee Black Friday sale runs Nov 19 to Dec 2",
       "code": null,
       "desc": "A simple ecobee Wi Fi thermostat that works with Alexa, Google Assistant and Siri. Set schedules and adjust the heat from anywhere, and it is ENERGY STAR certified to help save energy."
     },
@@ -76,8 +76,8 @@
       "brand": "ecobee",
       "category": "Smart Home",
       "type": "deal",
-      "offer": "Black Friday deal",
-      "note": "Black Friday deal on Amazon right now, check today's price",
+      "offer": "Up to $50 off",
+      "note": "ecobee Black Friday sale runs Nov 19 to Dec 2",
       "code": null,
       "desc": "ecobee's top thermostat with Alexa and Siri built in, an included SmartSensor for room by room comfort and an air quality monitor. Works with Alexa, Google Home and Apple Home."
     },
@@ -87,8 +87,8 @@
       "brand": "ecobee",
       "category": "Smart Home",
       "type": "deal",
-      "offer": "Black Friday deal",
-      "note": "Black Friday deal on Amazon right now, check today's price",
+      "offer": "Up to $50 off",
+      "note": "ecobee Black Friday sale runs Nov 19 to Dec 2",
       "code": null,
       "desc": "A mid range ecobee Wi Fi thermostat with a clean touchscreen, smart scheduling and support for add on room sensors. Works with Alexa, Google and Siri."
     },
@@ -124,6 +124,50 @@
       "note": "Black Friday deal on Amazon right now, check today's price",
       "code": null,
       "desc": "A budget Wi Fi thermostat with a 7 day schedule and app control from anywhere. A simple upgrade from an old dial or basic programmable thermostat."
+    },
+    {
+      "asin": "B0G3YJ9XVH",
+      "title": "Google Nest Learning Thermostat, 4th Gen, Gold",
+      "brand": "Google",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "21% off",
+      "note": "Black Friday Week deal",
+      "code": null,
+      "desc": "The gold finish of Google's newest learning thermostat. It learns your schedule, adjusts itself to save energy and includes a room temperature sensor."
+    },
+    {
+      "asin": "B01LTHM8LG",
+      "title": "Honeywell Home T5 Smart Thermostat, Black",
+      "brand": "Honeywell",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "Black Friday deal",
+      "note": "Black Friday deal on Amazon right now, check today's price",
+      "code": null,
+      "desc": "The black version of Honeywell's touchscreen Wi Fi thermostat with a 7 day schedule and geofencing. Works with Alexa and the Honeywell Home app."
+    },
+    {
+      "asin": "B0B1X7G9J2",
+      "title": "ecobee Comfort and Security Bundle with Smart Thermostat Premium",
+      "brand": "ecobee",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "Up to $50 off",
+      "note": "ecobee Black Friday sale runs Nov 19 to Dec 2",
+      "code": null,
+      "desc": "ecobee's top thermostat plus a SmartSensor, so you can balance hot and cold rooms and get alerts when doors open. A full upgrade in one box."
+    },
+    {
+      "asin": "B0CLM8YCQ5",
+      "title": "ecobee Total Security and Savings Bundle",
+      "brand": "ecobee",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "Up to $50 off",
+      "note": "ecobee Black Friday sale runs Nov 19 to Dec 2",
+      "code": null,
+      "desc": "The Smart Thermostat Premium bundled with ecobee sensors and security add ons for comfort, energy savings and home monitoring together."
     },
     {
       "asin": "B0B14C719T",
