@@ -12,98 +12,47 @@
 </head>
 <body>
 <a class="skip" href="#deals">Skip to deals</a>
-
 <header class="top">
-  <div class="wrap top-in">
-    <a class="mark" href="#" aria-label="Simon Says Save home">S<span>S</span>S</a>
-    <label class="search">
-      <span class="sr">Search deals</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-      <input id="q" type="search" placeholder="Search air fryer, Levi's, thermostat" autocomplete="off">
-    </label>
-    <button type="button" class="savedpill" data-type="saved" aria-label="Saved deals">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
-      <span id="savedN">0</span>
-    </button>
-  </div>
-  <nav class="wrap quick" aria-label="Shortcuts">
-    <button type="button" class="qchip" data-type="code"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Amazon codes</button>
-    <button type="button" class="qchip" data-type="coupon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z"/><path d="M10 7v12" stroke-dasharray="2 2"/></svg>Clip coupons</button>
-    <button type="button" class="qchip" data-q="thermostat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5"/></svg>Thermostats</button>
-    <a class="qchip" href="#filters"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Categories</a>
-    <a class="qchip" href="#drops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Biggest drops</a>
-  </nav>
-</header>
-
-<main>
-  <section class="panels wrap" aria-label="Featured collections">
-    <div class="rail" id="panels"></div>
-  </section>
-
-  <section class="wrap">
-    <a class="live-banner" href="#deals">
-      <div>
-        <p class="lb-title">Black Friday Deals Are Live</p>
-        <div class="lb-row">
-          <p class="lb-stat"><strong id="count">0</strong> deals<span>are live now</span></p>
-          <p class="lb-stat lb-cd"><span>Sale ends in</span><strong id="countdown">--</strong></p>
-        </div>
-      </div>
-      <p class="lb-meta" id="updated">Updated today</p>
-    </a>
-  </section>
-
-  <section class="wrap" id="drops" aria-labelledby="drops-h">
-    <div class="sec-h"><h2 id="drops-h">Biggest price drops</h2><button type="button" class="viewall" data-sort="drop">View all <span aria-hidden="true">›</span></button></div>
-    <div class="rail rank" id="rank"></div>
-  </section>
-
-  <section class="wrap" id="filters" aria-label="Filter deals">
-    <div class="sec-h"><h2>All deals</h2><p class="muted small"><span id="codes">0</span> codes · <span id="coupons">0</span> coupons</p></div>
-    <div class="chips" id="types" role="group" aria-label="Deal type"></div>
-    <div class="chips cats" id="cats" role="group" aria-label="Category"></div>
-  </section>
-
-  <section id="deals" class="wrap" aria-label="Deals">
-    <div class="grid" id="grid" aria-live="polite"></div>
-    <div class="empty" id="empty" hidden>
-      <p><strong>No deals match that.</strong> Try a different word or clear the filters.</p>
-      <button type="button" class="btn ghost" id="reset">Clear filters</button>
-    </div>
-  </section>
-
-  <section class="help wrap">
-    <details>
-      <summary>How to use a promo code</summary>
-      <ol>
-        <li>Tap Copy code on the deal.</li>
-        <li>Tap Get deal to open the product on Amazon and add it to your cart.</li>
-        <li>At checkout, find "Add a gift card or promotion code," paste the code and tap Apply.</li>
-      </ol>
-    </details>
-    <details>
-      <summary>How clip coupons work</summary>
-      <p>On the product page, check the box next to the coupon before adding the item to your cart. The savings show up at checkout. No code needed.</p>
-    </details>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap">
-    <p class="disclose">As an Amazon Associate I earn from qualifying purchases. Buying through these links doesn't change your price.</p>
-    <p>Discounts, coupons and codes can change or end at any time. Always check the final price on Amazon before you buy.</p>
-    <p class="small">Simon Says Save is independent and is not affiliated with or endorsed by Amazon.</p>
-  </div>
-</footer>
-
-<nav class="tabbar" aria-label="Main">
-  <button type="button" data-tab="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Home</button>
-  <button type="button" data-tab="bf" class="bf"><span class="bfword">Black<br>Friday</span>Deals</button>
-  <button type="button" data-tab="drops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Trending</button>
-  <button type="button" data-tab="codes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Codes</button>
-  <button type="button" data-tab="saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Saved</button>
+<div class="wrap top-in">
+<a class="mark" href="#" aria-label="Simon Says Save home">S<span>S</span>S</a>
+<label class="search"><span class="sr">Search deals</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Search air fryer, Levi's, thermostat" autocomplete="off"></label>
+<button type="button" class="savedpill" data-type="saved" aria-label="Saved deals"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span id="savedN">0</span></button>
+</div>
+<nav class="wrap quick" aria-label="Shortcuts">
+<button type="button" class="qchip" data-type="code">Amazon codes</button>
+<button type="button" class="qchip" data-type="coupon">Clip coupons</button>
+<button type="button" class="qchip" data-q="thermostat">Thermostats</button>
+<a class="qchip" href="#filters">Categories</a>
+<a class="qchip" href="#drops">Biggest drops</a>
 </nav>
-
+</header>
+<main>
+<section class="panels wrap" aria-label="Featured collections"><div class="rail" id="panels"></div></section>
+<section class="wrap"><a class="live-banner" href="#deals"><div><p class="lb-title">Black Friday Deals Are Live</p><div class="lb-row"><p class="lb-stat"><strong id="count">0</strong> deals<span>are live now</span></p><p class="lb-stat lb-cd"><span>Sale ends in</span><strong id="countdown">--</strong></p></div></div><p class="lb-meta" id="updated">Updated today</p></a></section>
+<section class="wrap" id="childrens-clothing" aria-labelledby="childrens-clothing-h">
+<div class="sec-h"><h2 id="childrens-clothing-h">Children's clothing finds</h2></div>
+<div class="grid"><article class="card"><div class="cb">
+<p class="off word">Check current price</p>
+<h3>Karuedoo Baby Girl Thanksgiving Romper and Tutu Set</h3>
+<p class="meta">Karuedoo · Children's clothing</p>
+<p class="desc">A four piece Thanksgiving outfit with a long sleeve romper, tutu skirt, leg warmers and matching headband.</p>
+<p class="meta">Select your size and color on Amazon. Price, shipping and availability may vary. Check the delivery date before ordering for Thanksgiving. No promo code is advertised for this item.</p>
+<div class="actions"><a class="btn primary" href="https://www.amazon.com/dp/B0HJCDKBDH?tag=sergiosimon-20&amp;linkCode=ll1" target="_blank" rel="noopener noreferrer sponsored">View on Amazon</a></div>
+</div></article></div>
+</section>
+<section class="wrap" id="drops" aria-labelledby="drops-h"><div class="sec-h"><h2 id="drops-h">Biggest price drops</h2><button type="button" class="viewall" data-sort="drop">View all <span aria-hidden="true">›</span></button></div><div class="rail rank" id="rank"></div></section>
+<section class="wrap" id="filters" aria-label="Filter deals"><div class="sec-h"><h2>All deals</h2><p class="muted small"><span id="codes">0</span> codes · <span id="coupons">0</span> coupons</p></div><div class="chips" id="types" role="group" aria-label="Deal type"></div><div class="chips cats" id="cats" role="group" aria-label="Category"></div></section>
+<section id="deals" class="wrap" aria-label="Deals"><div class="grid" id="grid" aria-live="polite"></div><div class="empty" id="empty" hidden><p><strong>No deals match that.</strong> Try a different word or clear the filters.</p><button type="button" class="btn ghost" id="reset">Clear filters</button></div></section>
+<section class="help wrap"><details><summary>How to use a promo code</summary><ol><li>Tap Copy code on the deal.</li><li>Tap Get deal to open the product on Amazon and add it to your cart.</li><li>At checkout, find &quot;Add a gift card or promotion code,&quot; paste the code and tap Apply.</li></ol></details><details><summary>How clip coupons work</summary><p>On the product page, check the box next to the coupon before adding the item to your cart. The savings show up at checkout. No code needed.</p></details></section>
+</main>
+<footer class="foot"><div class="wrap"><p class="disclose">As an Amazon Associate I earn from qualifying purchases. Buying through these links doesn't change your price.</p><p>Discounts, coupons and codes can change or end at any time. Always check the final price on Amazon before you buy.</p><p class="small">Simon Says Save is independent and is not affiliated with or endorsed by Amazon.</p></div></footer>
+<nav class="tabbar" aria-label="Main">
+<button type="button" data-tab="home" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Home</button>
+<button type="button" data-tab="bf" class="bf"><span class="bfword">Black<br>Friday</span>Deals</button>
+<button type="button" data-tab="drops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Trending</button>
+<button type="button" data-tab="codes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Codes</button>
+<button type="button" data-tab="saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Saved</button>
+</nav>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="./art.js?v=4"></script>
 <script src="./app.js?v=10" defer></script>
