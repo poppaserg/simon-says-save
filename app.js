@@ -14,7 +14,7 @@
   const link = asin => `https://www.amazon.com/dp/${asin}?tag=${TAG}&linkCode=ll1`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pct = d => { const m = String(d.offer||'').match(/(\d+)\s*%/); return m ? +m[1] : 0; };
-  const media = d => d.image ? `<div class="art photo"><img src="${esc(d.image)}" alt="" loading="lazy" width="400" height="400"></div>` : window.CAT_ART(d.category);
+  const media = d => d.image ? `<div class="art photo"><img src="${esc(d.image)}" alt="" loading="lazy" width="400" height="400"></div>` : window.CAT_ART(d.category, d.title);
   const TYPES = [['all','All deals'],['saved','Saved'],['code','Promo codes'],['coupon','Clip coupons'],['deal','Price drops'],['best','Best sellers'],['fav',"Simon's picks"]];
   const ICON = {
     bolt: '<svg class="f-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
