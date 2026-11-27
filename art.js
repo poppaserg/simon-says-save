@@ -1,6 +1,9 @@
-// Original category illustrations (line art). No Amazon imagery.
+// Original line art for Simon Says Save. No brand logos, no Amazon imagery.
+// Each card gets an icon for its product type (from the title), falling back to its category.
 window.CAT_ART = (() => {
+  const D = '<path d="M0 0h0" stroke-width="0"/>';
   const P = {
+    // category fallbacks
     Baby: '<path d="M9 3h6M10 3v2.5M14 3v2.5"/><rect x="8" y="5.5" width="8" height="15" rx="3"/><path d="M8 10h3M8 13h3M8 16h3"/>',
     Beauty: '<rect x="5" y="11" width="5" height="10" rx="1"/><path d="M6 11V7.5L9 5v6"/><rect x="13" y="9" width="6" height="12" rx="2"/><path d="M15 9V6h2v3M14.5 3h3"/>',
     Clothing: '<path d="M9 4l-5 2.5 1.5 4.5L8 10v10h8V10l2.5 1L20 6.5 15 4a3 3 0 0 1-6 0z"/>',
@@ -13,13 +16,122 @@ window.CAT_ART = (() => {
     Tools: '<path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2 2 0 0 1-3-3l7.5-7.5"/><path d="M3 21l3-3M5 4l4 4M4 9l5-5"/>',
     Drinks: '<path d="M8 4h8l-.6 2H8.6z"/><path d="M8.6 6l-.6 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-.6-2"/><path d="M8 11h8M11 14h0M13 16h0M12 12.8h0" stroke-width="1.6"/>',
     Christmas: '<path d="M12 3l1 2h-2z"/><path d="M12 5l-4 5h2.5L7 15h3l-4 4h12l-4-4h3l-3.5-5H16z"/><path d="M11 19v2h2v-2"/>',
-    _: '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>'
+    Travel: '<rect x="5" y="6.5" width="14" height="13" rx="2.5"/><path d="M9.5 6.5V4h5v2.5M9.5 10.5v5M14.5 10.5v5M8 19.5v1.5M16 19.5v1.5"/>',
+    _: '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>',
+
+    // product icons
+    shake: '<path d="M9.5 2.5h5v3h-5z"/><path d="M9.5 5.5C8 6.7 7.5 8 7.5 10v8.5a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V10c0-2-.5-3.3-2-4.5"/><path d="M7.5 12h9M7.5 16.5h9"/>',
+    supplement: '<path d="M5.5 4h9v3h-9z"/><rect x="4.5" y="7" width="11" height="13.5" rx="2"/><path d="M7.5 11.5h5M7.5 14.5h5"/><path d="M17 21.5l3.8-3.8a1.9 1.9 0 0 0-2.7-2.7L14.3 18.8a1.9 1.9 0 0 0 2.7 2.7zM16.2 16.9l2.7 2.7"/>',
+    earbuds: '<path d="M8.5 4A3.5 3.5 0 0 0 5 7.5v.5A3.5 3.5 0 0 0 8.5 11.5z"/><path d="M8.5 6.5v13"/><path d="M15.5 4A3.5 3.5 0 0 1 19 7.5v.5a3.5 3.5 0 0 1-3.5 3.5z"/><path d="M15.5 6.5v13"/>',
+    tv: '<rect x="2.5" y="4" width="19" height="12.5" rx="1.5"/><path d="M8.5 20.5h7M12 16.5v4"/>',
+    laptop: '<rect x="5" y="4.5" width="14" height="10" rx="1.2"/><path d="M2.5 18.5h19l-1.6-4h-15.8z"/><path d="M10.5 17h3"/>',
+    phone: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 5h3M11 18.5h2"/>',
+    tablet: '<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 7h7M8.5 10h7M8.5 13h4.5M11 18.5h2"/>',
+    watch: '<path d="M9 6.5l.7-4h4.6l.7 4M9 17.5l.7 4h4.6l.7-4"/><rect x="6.5" y="6.5" width="11" height="11" rx="3"/><path d="M12 9.5V12l1.8 1.2"/>',
+    ring: '<circle cx="12" cy="14" r="6.5"/><circle cx="12" cy="14" r="4.5"/><path d="M9.5 6l2.5-3 2.5 3"/>',
+    tag: '<rect x="6" y="8" width="12" height="12" rx="3.5"/><circle cx="12" cy="14" r="2.5"/><circle cx="7" cy="5" r="2.5"/><path d="M8.5 6.8L9.6 8"/>',
+    speaker: '<rect x="6" y="2.5" width="12" height="19" rx="3"/><circle cx="12" cy="14.5" r="3.8"/><circle cx="12" cy="14.5" r="1" /><circle cx="12" cy="7" r="1.4"/>',
+    controller: '<path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 5.3l-.6 3.2a2.5 2.5 0 0 1-4.4 1.1L14.5 16h-5l-1.4 1.6a2.5 2.5 0 0 1-4.4-1.1l-.6-3.2A4.5 4.5 0 0 1 7.5 8z"/><path d="M7.5 10.8v3M6 12.3h3"/><path d="M15.5 11.5h0M17.5 13.2h0" stroke-width="2.2"/>',
+    console: '<rect x="6.5" y="6" width="11" height="12" rx="1"/><path d="M6.5 6H5a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h1.5M17.5 6H19a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-1.5"/><path d="M4.2 9.5h0M19.8 14.5h0" stroke-width="2.2"/>',
+    camera: '<path d="M3.5 8h3.5l1.5-2.5h7L17 8h3.5v11.5h-17z"/><circle cx="12" cy="13.5" r="3.6"/><path d="M17.5 10.5h0" stroke-width="2"/>',
+    seccam: '<rect x="2.5" y="5" width="14" height="8.5" rx="2.5"/><circle cx="7.5" cy="9.2" r="2"/><path d="M16.5 8l5-2.5v7.5l-5-2.5M9.5 13.5v4.5H4"/>',
+    doorbell: '<rect x="7.5" y="2.5" width="9" height="19" rx="4.5"/><circle cx="12" cy="8.5" r="2.2"/><circle cx="12" cy="16" r="1.8"/>',
+    thermostat: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/><path d="M12 9.5v3M10.5 14.5h3"/>',
+    plug: '<rect x="5.5" y="5.5" width="13" height="11" rx="3"/><path d="M10 9.5v2.5M14 9.5v2.5M12 16.5v5M9.5 2.5v3M14.5 2.5v3"/>',
+    robot: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.8"/><path d="M6 8.2h12"/><path d="M8.5 16.5h0" stroke-width="2"/>',
+    vacuum: '<path d="M16.5 4.5l-6.5 13.5"/><rect x="14" y="1.8" width="6" height="5.5" rx="1.6" transform="rotate(25 17 4.5)"/><path d="M5 18h8.5a2 2 0 0 1 0 4H5a2 2 0 0 1 0-4z"/>',
+    airfryer: '<rect x="4.5" y="3" width="15" height="18" rx="3.5"/><path d="M4.5 10.5h15"/><rect x="9" y="13.5" width="6" height="3.5" rx="1"/><circle cx="12" cy="6.8" r="1.4"/>',
+    coffeemaker: '<path d="M5 3h14v4.5H5z"/><path d="M6 7.5V21h12M17 7.5V11"/><path d="M9 12.5h6.5v4a2.5 2.5 0 0 1-2.5 2.5h-1.5A2.5 2.5 0 0 1 9 16.5z"/>',
+    mug: '<path d="M4.5 9h11.5v6a5 5 0 0 1-5 5h-1.5a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.6 2.6 0 0 1 0 5.2H16M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/>',
+    bottle: '<path d="M8 6.5h8l-1.2 14.5H9.2z"/><path d="M7.5 4.5h9v2h-9zM14 4.5l1.6-2.5"/><path d="M8.6 12h6.8"/>',
+    icecream: '<path d="M8 11.5l4 9.5 4-9.5"/><path d="M6.5 11.5a5.5 5.5 0 0 1 11 0z"/><path d="M9.5 15h5"/>',
+    blender: '<path d="M7 3h10l-1.6 11H8.6z"/><path d="M8.6 14h6.8l1 3.5h-8.8z"/><rect x="6.5" y="17.5" width="11" height="4" rx="1"/><path d="M10 7.5l4 3"/>',
+    boot: '<path d="M6.5 2.5h6v9l6 2.8a2 2 0 0 1 1.2 1.8V19H6.5z"/><path d="M6.5 16.5h13.2M6.5 21h13.2"/>',
+    jeans: '<path d="M6 3h12l1.2 18h-5.4L12 10.5 10.2 21H4.8z"/><path d="M6 6.5h12M12 6.5v4"/>',
+    hoodie: '<path d="M9 4a3 3 0 0 0 6 0l4.5 2.2 2 6.3-3.2 1-1.3-3.4V21H7V10.1l-1.3 3.4-3.2-1 2-6.3z"/><path d="M10 15h4M10.5 7l-.5 3M13.5 7l.5 3"/>',
+    blanket: '<rect x="3" y="15.5" width="18" height="5" rx="2.5"/><rect x="4.5" y="10.5" width="15" height="5" rx="2.5"/><rect x="6" y="5.5" width="12" height="5" rx="2.5"/>',
+    pillow: '<path d="M4.5 6c3.5 1.2 11.5 1.2 15 0 1.3 3.5 1.3 8.5 0 12-3.5-1.2-11.5-1.2-15 0-1.3-3.5-1.3-8.5 0-12z"/><path d="M9 12h6"/>',
+    calendar: '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7 13.5h2M11 13.5h2M15 13.5h2M7 17h2M11 17h2"/>',
+    frame: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M6 17l4-5 3 3 2-2 3 4"/><circle cx="15.5" cy="8.5" r="1.5"/>',
+    candle: '<rect x="6.5" y="10" width="11" height="11" rx="2"/><path d="M12 10V7.5M6.5 14h11"/><path d="M12 2.5c1.6 1.6 1.6 3 0 4.5-1.6-1.5-1.6-2.9 0-4.5z"/>',
+    lights: '<path d="M2.5 5.5c4.5 3.5 14.5 3.5 19 0"/><path d="M7 8v2M12 8.8v2M17 8v2"/><path d="M6 10h2l-.2 3.2a.8.8 0 0 1-1.6 0zM11 10.8h2l-.2 3.2a.8.8 0 0 1-1.6 0zM16 10h2l-.2 3.2a.8.8 0 0 1-1.6 0z"/>',
+    wreath: '<circle cx="12" cy="11.5" r="7.5"/><circle cx="12" cy="11.5" r="3.8"/><path d="M9.3 21l2.7-3.2 2.7 3.2"/>',
+    ornament: '<circle cx="12" cy="14.5" r="6.5"/><path d="M10.3 5.5h3.4V8h-3.4zM12 5.5V3M5.7 13h12.6M6.3 17h11.4"/>',
+    stocking: '<path d="M8 2.5h7.5V13l-3.2 6.3a3.2 3.2 0 0 1-5.6-3L8 13z"/><path d="M8 6.5h7.5"/>',
+    drill: '<path d="M3 7.5h12.5v5.5H3z"/><path d="M15.5 9h3.5l2.5 1.25L19 11.5h-3.5M8.5 13l-1 8h4.5l1-8"/>',
+    flashlight: '<path d="M9.5 8.5H19v7H9.5L4 18V6z"/><path d="M19 10h2v4h-2M12.5 12h3"/>',
+    battery: '<rect x="3.5" y="7" width="17" height="13" rx="2"/><path d="M7.5 7V4.5h3V7M13.5 7V4.5h3V7M12.8 10l-2.3 4h3l-2.3 4"/>',
+    lock: '<rect x="5" y="10" width="14" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',
+    router: '<rect x="3" y="13" width="18" height="6.5" rx="2"/><path d="M7 13L5 6.5M17 13l2-6.5"/><path d="M7 16.2h0M10 16.2h0" stroke-width="2"/><path d="M9.5 6a3.5 3.5 0 0 1 5 0M11 8a1.4 1.4 0 0 1 2 0"/>',
+    purifier: '<rect x="6" y="6" width="12" height="15.5" rx="3"/><path d="M9 10h6M9 13h6M9 16h6M10 2.5c0 1.2 1 1.2 1 2.5M13 2.5c0 1.2 1 1.2 1 2.5"/>',
+    shelf: '<path d="M3 8.5h18M3 17h18"/><path d="M5.5 8.5V5h3v3.5M14 8.5V4h2v4.5M16.5 8.5V5.5h2v3M7 17v-3.5h4.5V17"/>',
+    house: '<path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5M10 20v-5.5h4V20"/><path d="M8 12.5h0M16 12.5h0" stroke-width="2"/>',
+    tooth: '<path d="M11 21V9.5h2V21z"/><path d="M10 9.5V3.5h4v6M10 5.5h4M10 7.5h4"/>',
+    dryer: '<circle cx="14.5" cy="9" r="5.5"/><circle cx="14.5" cy="9" r="2.2"/><path d="M9 9H3M10.8 13.2L9 21H5.8l1.6-7.6"/>',
+    iron: '<rect x="7.5" y="2.5" width="4" height="12" rx="1.2"/><rect x="12.5" y="2.5" width="4" height="12" rx="1.2"/><path d="M8.5 14.5c0 4.2 1.6 6.5 3.5 6.5s3.5-2.3 3.5-6.5M12 21v1.5M9.5 5v6M14.5 5v6"/>',
+    roll: '<ellipse cx="12" cy="6" rx="6" ry="2.5"/><path d="M6 6v12.5a6 2.5 0 0 0 12 0V6"/><circle cx="12" cy="6" r="1"/>',
+    can: '<path d="M8 4.5h8l1 2v12l-1 2H8l-1-2v-12z"/><path d="M7 9h10M7 16h10M11 3h2"/>',
+    book: '<path d="M4 5a2 2 0 0 1 2-2h12.5v15.5H6a2 2 0 0 0-2 2z"/><path d="M4 20.5V5M8 7h7M8 10h5"/><path d="M18.5 18.5v3H6a2 2 0 0 1-2-2"/>',
+    sunrise: '<path d="M4.5 17.5a7.5 7.5 0 0 1 15 0z"/><path d="M12 4v2.5M5.3 7.8l1.7 1.7M18.7 7.8L17 9.5M2.5 17.5h19M7 21h10"/>',
+    cookware: '<path d="M3 11h15v4a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M18 12.5h3.5M5.5 11V8.5h10V11"/>',
+    mixer: '<path d="M5 6.5a3.5 3.5 0 0 1 3.5-3.5H17a2 2 0 0 1 2 2v3H8"/><path d="M17 8v12.5H5M8 8v3"/><path d="M7 13h7v2.5a3.5 3.5 0 0 1-7 0z"/>',
+    massage: '<path d="M5 5.5l9.5 9.5"/><rect x="2.5" y="2.5" width="6" height="4.5" rx="2.2" transform="rotate(45 5.5 4.75)"/><path d="M14.5 15l2.2-2.2 4.5 4.5-2.2 2.2z"/>',
+    mascara: '<rect x="10" y="9" width="4" height="12.5" rx="1"/><path d="M12 9V2.5M10.4 4h3.2M10.4 5.5h3.2M10.4 7h3.2"/>',
+    lipstick: '<rect x="8.5" y="12" width="7" height="9.5" rx="1"/><path d="M9.5 12V8.5l5-3V12M8.5 15h7"/>',
+    jar: '<rect x="4" y="6.5" width="16" height="3.5" rx="1"/><path d="M5 10h14v8a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3z"/><path d="M8.5 14.5h7"/>',
+    facemask: '<path d="M12 3c4.5 0 7 3.5 7 8.5S16 21 12 21s-7-4.5-7-9.5S7.5 3 12 3z"/><path d="M8.5 10.5h2M13.5 10.5h2M10 16a3 3 0 0 0 4 0"/>',
+    game: '<rect x="3" y="7.5" width="11" height="11" rx="2"/><path d="M14 9.5l5.3-1.4 2.2 8.2-7.5 2"/><path d="M6.5 11h0M10.5 15h0M8.5 13h0M17.6 12.2h0" stroke-width="2"/>',
+    egg: '<path d="M12 3c3.5 0 6 6 6 10a6 6 0 0 1-12 0c0-4 2.5-10 6-10z"/><path d="M7 13l2.2-1.6 2.3 1.6 2.3-1.6 2.2 1.6"/>',
+    tub: '<rect x="5" y="5" width="14" height="3" rx="1"/><path d="M6 8h12l-1.2 12.5H7.2z"/><path d="M9 13h6"/>',
+    _x: D
   };
-  const HUE = { Baby: 240, Beauty: 350, Clothing: 320, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, Drinks: 175, Christmas: 150, _: 30 };
-  return cat => {
-    const k = P[cat] ? cat : '_', h = HUE[k];
+  // First match wins. Tested against the lower case title.
+  const RULES = [
+    [/mascara/, 'mascara'], [/\blip|chubby stick/, 'lipstick'], [/\bmasks?\b|patch(es)?\b/, 'facemask'],
+    [/ice cream|creami/, 'icecream'], [/cream|lotion|moisturiz|serum|foundation|balm|gift set|hair treatment/, 'jar'],
+    [/catch phrase|connect 4|\bgame\b/, 'game'], [/hatching egg/, 'egg'], [/play doh/, 'tub'],
+    [/protein shake|shake,/, 'shake'], [/supplement|capsule|vitamin/, 'supplement'],
+    [/earbud|airpods|\bbuds\b/, 'earbuds'], [/headphone/, 'Electronics'],
+    [/doorbell/, 'doorbell'], [/floodlight|spotlight cam|wyze cam|blink mini|outdoor 2k|\bcam\b/, 'seccam'],
+    [/polaroid|instant camera|photo printer|drone/, 'camera'],
+    [/macbook|laptop/, 'laptop'], [/galaxy s\d|smartphone/, 'phone'],
+    [/ipad|tablet|kindle/, 'tablet'], [/\btile\b|airtag/, 'tag'], [/oura|smart ring/, 'ring'],
+    [/watch|fitbit|fitness tracker/, 'watch'],
+    [/controller/, 'controller'], [/switch 2|playground|console/, 'console'],
+    [/fire tv stick|\btv\b|oled|qled/, 'tv'],
+    [/speaker|soundlink|beats pill|jbl go|jbl charge|emberton/, 'speaker'],
+    [/echo show|photo frame|picture frame/, 'frame'], [/thermostat/, 'thermostat'],
+    [/smart plug|power strip/, 'plug'], [/roomba|robot vacuum|deebot/, 'robot'],
+    [/vacuum|carpet cleaner|floor cleaner|pencilwash/, 'vacuum'],
+    [/air fryer|toaster oven|smart oven|double oven|toaster/, 'airfryer'],
+    [/espresso|coffee maker|keurig|nespresso|vertuo/, 'coffeemaker'],
+    [/\bmug\b|travel mug|food warmer|warming mat/, 'mug'], [/tumbler|quencher|water bottle|freesip/, 'bottle'],
+    [/ice cream|creami/, 'icecream'], [/blender|food processor|chopper|dicer/, 'blender'],
+    [/stand mixer/, 'mixer'], [/pots and pans|skillet|cookware|oven mitt|rice cooker/, 'cookware'],
+    [/boot|slipper/, 'boot'], [/jeans/, 'jeans'], [/hoodie|sweatshirt|cardigan|lounge set|\btee\b/, 'hoodie'],
+    [/blanket|throw|comforter/, 'blanket'], [/pillow/, 'pillow'], [/luggage|suitcase/, 'Travel'],
+    [/calendar/, 'calendar'], [/candle/, 'candle'], [/string lights|christmas lights|\blights\b|garland/, 'lights'],
+    [/wreath/, 'wreath'], [/ornament|topper/, 'ornament'], [/stocking/, 'stocking'],
+    [/drill|dremel|rotary tool/, 'drill'], [/flashlight/, 'flashlight'], [/jump starter/, 'battery'],
+    [/deadbolt|\block\b|keypad/, 'lock'], [/mesh|router|eero|wi fi 7/, 'router'],
+    [/humidifier|air purifier|purifier/, 'purifier'], [/shel(f|ves)|acoustic panel/, 'shelf'],
+    [/playhouse/, 'house'], [/toothbrush|flosser|whitestrips|dental/, 'tooth'],
+    [/hair dryer|airwrap|flexstyle|supersonic|styler/, 'dryer'], [/flat iron/, 'iron'],
+    [/paper towel/, 'roll'], [/sparkling water|bubly/, 'can'], [/coloring|\bbook\b/, 'book'],
+    [/sunrise|sound machine/, 'sunrise'], [/massage|theragun|heating pad/, 'massage']
+  ];
+  const HUE = { Baby: 240, Beauty: 350, Clothing: 320, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, Drinks: 175, Christmas: 150, Travel: 220, _: 30 };
+  const pick = (cat, title) => {
+    const t = String(title || '').toLowerCase();
+    for (const [re, k] of RULES) if (re.test(t)) return k;
+    return P[cat] ? cat : '_';
+  };
+  const art = (cat, title) => {
+    const k = pick(cat, title), h = HUE[cat] ?? HUE._;
     return `<div class="art" style="--h:${h}" aria-hidden="true">
       <span class="blob b1"></span><span class="blob b2"></span>
       <svg viewBox="0 0 24 24">${P[k]}</svg></div>`;
   };
+  art.pick = pick; art.icons = P;
+  return art;
 })();
