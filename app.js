@@ -151,9 +151,15 @@
   }
   tick(); setInterval(tick, 30000);
 
-  fetch('./deals.json?v=' + Date.now()).then(r=>r.json()).then(data => {
-    state.deals = data.deals || [];
-    const dt = new Date(data.updated);
+  const v = '?v=' + Date.now();
+  Promise.all([
+    fetch('./deals.json' + v).then(r=>r.json()),
+    fetch('./deals-bf.json' + v).then(r=>r.ok ? r.json() : {deals:[]}).catch(()=>({deals:[]}))
+  ]).then(([data, bf]) => {
+    // Newest Black Friday batch goes first; it also replaces any older entry with the same ASIN.
+    const fresh = bf.deals || [], ids = new Set(fresh.map(d=>d.asin));
+    state.deals = [...fresh, ...(data.deals || []).filter(d=>!ids.has(d.asin))];
+    const dt = new Date(bf.updated || data.updated);
     $('updated').textContent = 'Updated ' + dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ', ' + dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     countUp($('count'), state.deals.length);
     const nCodes = state.deals.filter(d=>d.code).length;
