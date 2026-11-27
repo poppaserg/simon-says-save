@@ -9,12 +9,18 @@
   const persist = () => { try { document.cookie = CK + '=' + encodeURIComponent([...saved].join(',')) + '; max-age=31536000; path=/; SameSite=Lax'; } catch(e) {} };
   const $ = id => document.getElementById(id);
   const grid = $('grid');
+  grid.insertAdjacentHTML('beforebegin', '<div class="daybar" id="daybar"></div>');
   grid.innerHTML = '<div class="skel"></div>'.repeat(6);
 
   const link = asin => `https://www.amazon.com/dp/${asin}?tag=${TAG}&linkCode=ll1`;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pct = d => { const m = String(d.offer||'').match(/(\d+)\s*%/); return m ? +m[1] : 0; };
   const media = d => d.image ? `<div class="art photo"><img src="${esc(d.image)}" alt="" loading="lazy" width="400" height="400"></div>` : window.CAT_ART(d.category, d.title);
+  // Price shown on Amazon when the deal was added, read from the note: "$34.99 (was $169.98)".
+  const price = d => { const m = String(d.note||'').match(/\$([\d,]+\.\d\d)\s*\(was \$([\d,]+\.\d\d)\)/); return m ? {now:m[1], was:m[2]} : null; };
+  const when = t => { const x = new Date(t); return isNaN(x) ? '' : x.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ', ' + x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}); };
+  const shareUrl = asin => location.origin + location.pathname + '?d=' + asin;
+  const SHARE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M7.5 7.5 12 3l4.5 4.5"/></svg>';
   const TYPES = [['all','All deals'],['saved','Saved'],['code','Promo codes'],['coupon','Clip coupons'],['deal','Price drops'],['best','Best sellers'],['fav',"Simon's picks"]];
   const ICON = {
     bolt: '<svg class="f-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>',
@@ -64,7 +70,7 @@
   }
 
   function card(d){
-    const p = pct(d);
+    const p = pct(d), pr = price(d);
     const tag = d.code ? '<span class="bftag code">Promo code</span>' : d.type==='coupon' ? '<span class="bftag coupon">Clip coupon</span>' : d.type==='best' ? '<span class="bftag best">Best seller</span>' : d.type==='fav' ? '<span class="bftag best">Simon\'s pick</span>' : '<span class="bftag">Black Friday</span>';
     const flags = [];
     if (p >= 50) flags.push(`<li>${ICON.bolt}Huge price drop</li>`);
@@ -83,10 +89,11 @@
         <h3>${esc(d.title)}</h3>
         <p class="meta">${esc(meta)}</p>
         ${flags.length ? `<ul class="flags">${flags.join('')}</ul>` : ''}
-        ${d.note ? `<p class="meta" title="${esc(d.note)}">${esc(d.note)}</p>` : ''}
+        ${pr ? `<p class="price"><strong>$${esc(pr.now)}</strong> <s>$${esc(pr.was)}</s></p><p class="asof">Price as of ${esc(when(d._asof))}. Prices can change.</p>`
+             : d.note ? `<p class="meta" title="${esc(d.note)}">${esc(d.note)}</p>` : ''}
         ${d.desc ? `<p class="desc">${esc(d.desc)}</p><button type="button" class="more" data-more>Details</button>` : ''}
         ${code}
-        <div class="actions"><a class="btn primary" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored">Get deal</a></div>
+        <div class="actions"><a class="btn primary" href="${link(d.asin)}" target="_blank" rel="noopener noreferrer sponsored">Get deal</a><button type="button" class="btn ghost share" data-share="${esc(d.asin)}" aria-label="Share: ${esc(d.title)}">${SHARE}Share</button></div>
       </div>
     </article>`;
   }
@@ -96,13 +103,15 @@
     // Match every word, ignoring plurals (thermostats -> thermostat) and extra punctuation.
     const stem = w => w.replace(/[^a-z0-9$%]/g,'').replace(/(ies)$/,'y').replace(/(es|s)$/,'');
     const words = q.replace(/wi[\s-]?fi/g,'wifi').split(/\s+/).map(stem).filter(Boolean);
-    const hay = d => `${d.title} ${d.brand} ${d.category} ${d.desc||''} ${d.note||''}`.toLowerCase().replace(/wi[\s-]?fi/g,'wifi').replace(/[^a-z0-9$% ]/g,' ');
+    const hay = d => `${d.asin.toLowerCase()} ${d.title} ${d.brand} ${d.category} ${d.desc||''} ${d.note||''}`.toLowerCase().replace(/wi[\s-]?fi/g,'wifi').replace(/[^a-z0-9$% ]/g,' ');
     let list = state.deals.filter(d =>
       (state.type==='all' || (state.type==='saved' ? saved.has(d.asin) : state.type==='code' ? !!d.code : d.type===state.type && !d.code)) &&
       (state.cat==='All' || d.category===state.cat) &&
       (!words.length || (h => words.every(w => h.includes(w)))(hay(d))));
     if (state.sort==='drop') list = [...list].sort((a,b)=>pct(b)-pct(a));
     grid.innerHTML = list.map(card).join('');
+    const day = new Date(state.updated || Date.now());
+    $('daybar').innerHTML = `<strong>${day.toLocaleDateString('en-US',{month:'short',day:'numeric'})} Deals</strong><span class="today">Today</span><span class="picks">${list.length} ${list.length===1?'pick':'picks'}</span>`;
     $('empty').hidden = list.length>0;
     $('empty').querySelector('p').innerHTML = state.type==='saved' && !q && state.cat==='All'
       ? '<strong>Nothing saved yet.</strong> Tap the heart on any deal to keep it here for later.'
@@ -120,6 +129,12 @@
       was ? saved.delete(a) : saved.add(a); persist();
       toast(was ? 'Removed from saved' : 'Saved for later');
       if (state.type==='saved') render(); else { b.setAttribute('aria-pressed', !was); b.setAttribute('aria-label', (was?'Save for later':'Remove from saved') + b.getAttribute('aria-label').replace(/^[^:]*/,'')); chips(); }
+    }
+    else if (b.dataset.share){
+      const d = state.deals.find(x=>x.asin===b.dataset.share), url = shareUrl(b.dataset.share);
+      const text = d ? `${d.title}: ${d.offer} on Simon Says Save` : 'Deal on Simon Says Save';
+      if (navigator.share) navigator.share({title:'Simon Says Save', text, url}).catch(()=>{});
+      else (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(()=>toast('Link copied')).catch(()=>toast(url));
     }
     else if (b.dataset.more !== undefined){ const c=b.closest('.card'); c.classList.toggle('open'); b.textContent = c.classList.contains('open') ? 'Less' : 'Details'; }
     else if (b.dataset.tab){
@@ -157,8 +172,12 @@
     fetch('./deals-bf.json' + v).then(r=>r.ok ? r.json() : {deals:[]}).catch(()=>({deals:[]}))
   ]).then(([data, bf]) => {
     // Newest Black Friday batch goes first; it also replaces any older entry with the same ASIN.
-    const fresh = bf.deals || [], ids = new Set(fresh.map(d=>d.asin));
-    state.deals = [...fresh, ...(data.deals || []).filter(d=>!ids.has(d.asin))];
+    const fresh = (bf.deals || []).map(d=>({...d, _asof: bf.updated})), ids = new Set(fresh.map(d=>d.asin));
+    state.deals = [...fresh, ...(data.deals || []).filter(d=>!ids.has(d.asin)).map(d=>({...d, _asof: data.updated}))];
+    state.updated = bf.updated || data.updated;
+    // A shared link (?d=ASIN) opens straight to that deal.
+    const shared = new URLSearchParams(location.search).get('d');
+    if (shared && /^[A-Z0-9]{10}$/i.test(shared) && state.deals.some(d=>d.asin===shared)) { state.q = shared; $('q').value = shared; setTimeout(()=>go('filters'), 300); }
     const dt = new Date(bf.updated || data.updated);
     $('updated').textContent = 'Updated ' + dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ', ' + dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     countUp($('count'), state.deals.length);
