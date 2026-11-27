@@ -120,7 +120,7 @@ window.CAT_ART = (() => {
     [/backpack|bookbag/, 'backpack'], [/handbag|satchel|messenger bag|purse/, 'handbag'],
     [/power bank|jump starter/, 'battery'], [/soundbar|echo dot/, 'speaker'],
     [/racing wheel/, 'wheel'], [/playstation|xbox series/, 'controller'],
-    [/gaming monitor/, 'monitor'], [/inkjet printer|all in one.*printer|megatank|pixma/, 'printer'],
+    [/gaming monitor|pegboard|monitor stand/, 'monitor'], [/inkjet printer|all in one.*printer|megatank|pixma/, 'printer'],
     [/vlogging camera|osmo pocket/, 'camera'],
     [/running shoe|sneaker|cross trainer|shoes\b/, 'shoe'], [/\bsocks?\b/, 'sock'],
     [/yoga mat|exercise mat/, 'yogamat'], [/dumbbell/, 'dumbbell'],
