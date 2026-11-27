@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T15:00:00-05:00",
+  "updated": "2026-11-27T17:00:00-05:00",
   "tag": "sergiosimon-20",
   "deals": [
     {
@@ -224,6 +224,226 @@
       "note": "Black Friday deal: $33.00 (was $55.00). Check today's price on Amazon.",
       "code": null,
       "desc": "Amazon's best selling down alternative pillows with a soft cotton cover. Two pillows for the price of one nice one."
+    },
+    {
+      "asin": "B0GR6F79MT",
+      "title": "Apple MacBook Neo 13 inch, A18 Pro, 256GB, Silver",
+      "brand": "Apple",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "7% off",
+      "note": "Black Friday deal: $649.00 (was $699.00). Check today's price on Amazon.",
+      "code": null,
+      "desc": "Apple's newest and most affordable MacBook with a 13 inch Liquid Retina screen and the A18 Pro chip. Light, quiet and great for school, work and streaming."
+    },
+    {
+      "asin": "B0DSR9Q461",
+      "title": "TCL 85 inch QM6K Mini LED QLED 4K Google TV",
+      "brand": "TCL",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "10% off",
+      "note": "Black Friday deal: $897.99 (was $997.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A huge 85 inch Mini LED TV with bright HDR, Dolby Vision and up to 144Hz for gaming. Google TV is built in."
+    },
+    {
+      "asin": "B0H7X25DRT",
+      "title": "Google Pixel Watch 5, 41mm, Wi Fi, Obsidian",
+      "brand": "Google",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "29% off",
+      "note": "Black Friday deal: $284.99 (was $399.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "Google's newest smartwatch with a domed display, Gemini built in and full health and sleep tracking. Works with Android phones."
+    },
+    {
+      "asin": "B0FN1861NG",
+      "title": "Shark DePuffi Hot and Cold Contrast Therapy Tool, Pink",
+      "brand": "Shark",
+      "category": "Beauty",
+      "type": "deal",
+      "offer": "25% off",
+      "note": "Black Friday deal: $149.00 (was $199.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A handheld skin tool that switches between hot and cold in seconds to depuff under eyes and calm skin. A viral beauty gift."
+    },
+    {
+      "asin": "B0DXMR856R",
+      "title": "Samsung 65 inch The Frame QLED 4K TV (2025)",
+      "brand": "Samsung",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Black Friday deal: $897.96 (was $1,497.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "The TV that looks like framed art when it is off, with a matte screen and slim wall mount. Hundreds off for Black Friday."
+    },
+    {
+      "asin": "B0CFPTK5JG",
+      "title": "Amazon Kindle Paperwhite 16GB (2024), Raspberry",
+      "brand": "Amazon",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "35% off",
+      "note": "Black Friday deal: $129.99 (was $199.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "The fastest Paperwhite yet with a 7 inch glare free screen, weeks of battery and waterproofing for the beach or bath."
+    },
+    {
+      "asin": "B0FQFNRH72",
+      "title": "Apple Watch SE 3, GPS, 40mm, Starlight",
+      "brand": "Apple",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "28% off",
+      "note": "Black Friday deal: $179.00 (was $249.00). Check today's price on Amazon.",
+      "code": null,
+      "desc": "Apple's most affordable watch with an always on display, heart rate, sleep and fitness tracking, plus fall detection and Emergency SOS."
+    },
+    {
+      "asin": "B0HJ98PDWM",
+      "title": "Ember Mug 3 Smart Heated Mug, 10 oz, Black",
+      "brand": "Ember",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "31% off",
+      "note": "Black Friday deal: $89.99 (was $129.95). Check today's price on Amazon.",
+      "code": null,
+      "desc": "The newest Ember mug keeps coffee at your exact temperature, now with a dial right on the mug. Dishwasher safe with a lid."
+    },
+    {
+      "asin": "B0C9V811L6",
+      "title": "Skylight Calendar 15 inch Touchscreen Family Calendar",
+      "brand": "Skylight",
+      "category": "Home",
+      "type": "deal",
+      "offer": "20% off",
+      "note": "Black Friday deal: $239.00 (was $299.00). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A wall mounted touchscreen calendar and chore chart that keeps the whole family's schedule in one place. A top holiday gift for busy parents."
+    },
+    {
+      "asin": "B0D63573CF",
+      "title": "Tile by Life360 Mate Bluetooth Tracker, 2 Pack",
+      "brand": "Tile",
+      "category": "Electronics",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Black Friday deal: $26.99 (was $44.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "Two key finders that work with both iPhone and Android. Ring your keys from your phone, or press the Tile to find your phone."
+    },
+    {
+      "asin": "B0D2JGYX3F",
+      "title": "Nex Playground Active Play System",
+      "brand": "Nex",
+      "category": "Kids",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Black Friday deal: $209.00 (was $299.00). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A plug in game console that gets kids moving with motion games, no controllers needed. Great for rainy days and family game night."
+    },
+    {
+      "asin": "B0DC8ZMR1P",
+      "title": "Amazon Echo Show 8 (Newest Model), Graphite",
+      "brand": "Amazon",
+      "category": "Smart Home",
+      "type": "deal",
+      "offer": "50% off",
+      "note": "Black Friday deal. Check today's price on Amazon.",
+      "code": null,
+      "desc": "An 8.7 inch smart display with room filling spatial audio and Alexa+. Video call family, watch shows and control your smart home. Half off."
+    },
+    {
+      "asin": "B0DPRRGFS4",
+      "title": "UGG Women's Classic Micro Boot, Chestnut",
+      "brand": "UGG",
+      "category": "Clothing",
+      "type": "deal",
+      "offer": "30% off",
+      "note": "Black Friday deal: $97.99 (was $139.95). Check today's price on Amazon.",
+      "code": null,
+      "desc": "UGG's low profile take on the Classic boot, in suede lined with soft sheepskin. Pick your size and color on Amazon."
+    },
+    {
+      "asin": "B01N2R4JIU",
+      "title": "Samsonite Freeform 2 Piece Luggage Set, Black",
+      "brand": "Samsonite",
+      "category": "Travel",
+      "type": "deal",
+      "offer": "29% off",
+      "note": "Black Friday deal: $199.99 (was $279.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A carry on and a large checked spinner with tough hard shells, TSA locks and expandable space. Ready for holiday travel."
+    },
+    {
+      "asin": "B09Q4GWMZQ",
+      "title": "LEGO Botanicals Succulents 10309",
+      "brand": "LEGO",
+      "category": "Kids",
+      "type": "deal",
+      "offer": "44% off",
+      "note": "Black Friday deal: $27.99 (was $49.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "Build nine little LEGO succulents that never need water. A relaxing build for teens and adults that doubles as desk decor."
+    },
+    {
+      "asin": "B0GVPBSXXF",
+      "title": "Cuisinart ClearView 4 Qt Glass Basket Air Fryer",
+      "brand": "Cuisinart",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Black Friday deal: $83.99 (was $139.95). Check today's price on Amazon.",
+      "code": null,
+      "desc": "An air fryer with a glass basket and window, so you can watch food crisp without opening it. Five cooking functions."
+    },
+    {
+      "asin": "B0FRGDZ293",
+      "title": "Fullstar Pro Original Vegetable Chopper and Spiralizer, 4 in 1",
+      "brand": "Fullstar",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "53% off",
+      "note": "Black Friday deal: $23.74 (was $49.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "TikTok's favorite veggie chopper. Dice onions, peppers and salsa in seconds, or spiralize zucchini noodles. Dishwasher safe."
+    },
+    {
+      "asin": "B0FJ2ZHPDY",
+      "title": "Toniebox 2 Audio Player Starter Set, Cloud Pink",
+      "brand": "Tonies",
+      "category": "Kids",
+      "type": "deal",
+      "offer": "33% off",
+      "note": "Black Friday deal: $99.99 (was $149.99). Check today's price on Amazon.",
+      "code": null,
+      "desc": "A soft, screen free speaker for little ones. Kids place a character on top to play stories and songs. Ages 1 and up."
+    },
+    {
+      "asin": "B0DSJW8SFG",
+      "title": "Ninja CREAMi Scoop and Swirl Ice Cream and Soft Serve Maker",
+      "brand": "Ninja",
+      "category": "Kitchen",
+      "type": "deal",
+      "offer": "23% off",
+      "note": "Black Friday deal. Check today's price on Amazon.",
+      "code": null,
+      "desc": "Make ice cream, gelato, sorbet and now soft serve at home with 13 one touch programs. A fun family gift."
+    },
+    {
+      "asin": "B01GNVF8S8",
+      "title": "Waterpik Cordless Advanced Water Flosser, White",
+      "brand": "Waterpik",
+      "category": "Health",
+      "type": "deal",
+      "offer": "40% off",
+      "note": "Black Friday deal. Check today's price on Amazon.",
+      "code": null,
+      "desc": "A rechargeable water flosser with 3 pressure settings and 4 tips. Cleans between teeth and around braces better than string floss."
     },
     {
       "asin": "B0FQFB8FMG",
