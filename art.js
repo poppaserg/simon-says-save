@@ -108,11 +108,22 @@ window.CAT_ART = (() => {
     giftbox: '<rect x="4" y="10" width="16" height="10" rx="1"/><rect x="3" y="7" width="18" height="3" rx="1"/><path d="M12 7v13M12 7c-1-3-5-3.5-5-1.5S10 7 12 7zM12 7c1-3 5-3.5 5-1.5S14 7 12 7z"/>',
     trimmer: '<rect x="8" y="6.5" width="8" height="14.5" rx="3"/><path d="M8 3h8v3.5H8zM10 3V1.5M12 3V1.5M14 3V1.5"/><circle cx="12" cy="12" r="1.3"/>',
     brick: '<rect x="3" y="10" width="18" height="9" rx="1"/><rect x="5.5" y="7" width="3.5" height="3" rx=".6"/><rect x="10.25" y="7" width="3.5" height="3" rx=".6"/><rect x="15" y="7" width="3.5" height="3" rx=".6"/>',
+    table: '<rect x="3" y="8" width="18" height="2.5" rx=".8"/><path d="M5 10.5V20M19 10.5V20M8 10.5l-1.5 5M16 10.5l1.5 5"/>',
+    tile: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 9.2h17M3.5 14.8h17M9 3.5v5.7M15 3.5v5.7M12 9.2v5.6M6 14.8v5.7M18 14.8v5.7"/>',
+    wallroll: '<path d="M6 4h12v6H6z"/><ellipse cx="6" cy="7" rx="2" ry="3"/><path d="M18 10v10H8V10"/><path d="M11 13l2 2M14 16l2 2M11 17l1 1"/>',
+    faucet: '<path d="M7 20V9a5 5 0 0 1 10 0v2"/><path d="M15 11h4v2.5h-4z"/><path d="M5 20h6M17 16v1.5M17 19.5v.5"/><path d="M5.5 6h3"/>',
+    knob: '<circle cx="12" cy="9" r="5"/><path d="M10 14l-.5 3h5l-.5-3"/><rect x="7" y="17" width="10" height="3" rx="1"/>',
+    stool: '<ellipse cx="12" cy="5" rx="6" ry="2"/><path d="M7 6.5L5 21M17 6.5L19 21M8.5 6.8l-.5 14M15.5 6.8l.5 14M6.5 14h11"/>',
+    cart: '<rect x="4" y="4" width="16" height="2.5" rx=".8"/><path d="M5.5 6.5v11M18.5 6.5v11M5.5 11.5h13M5.5 16.5h13"/><circle cx="6" cy="19.5" r="1.4"/><circle cx="18" cy="19.5" r="1.4"/>',
+    rug: '<rect x="5" y="4" width="14" height="16" rx="1"/><rect x="8" y="7" width="8" height="10" rx=".5"/><path d="M7 2.5v1.5M10 2.5v1.5M14 2.5v1.5M17 2.5v1.5M7 20v1.5M10 20v1.5M14 20v1.5M17 20v1.5"/>',
     _x: D
   };
-  P.Food = P.snack; P.Books = P.book; P.Sports = P.dumbbell; P.Pets = P.paw;
+  P.Food = P.snack; P['Kitchen Remodel'] = P.tile; P.Books = P.book; P.Sports = P.dumbbell; P.Pets = P.paw;
   // First match wins. Tested against the lower case title.
   const RULES = [
+    [/backsplash|wall tile|tile decal/, 'tile'], [/contact paper|wallpaper/, 'wallroll'], [/faucet/, 'faucet'],
+    [/cabinet (pulls|knobs|handles)/, 'knob'], [/stools?\b/, 'stool'], [/island|bakers rack/, 'cart'],
+    [/kitchen mats?|runner rug|kitchen rug/, 'rug'], [/dining table|kitchen table|table set/, 'table'],
     [/cookbook|kindle edition/, 'book'], [/galaxy tab/, 'tablet'], [/perfume|parfum|eau de toilette|fragrance/, 'perfume'],
     [/brush set|makeup brush|blending sponge|complexion sponge/, 'brush'],
     [/shampoo|conditioner|hair oil|frizz/, 'shampoo'], [/curling iron|curling wand/, 'curler'],
@@ -163,7 +174,7 @@ window.CAT_ART = (() => {
     [/paper towel/, 'roll'], [/sparkling water|bubly/, 'can'], [/coloring|\bbook\b/, 'book'],
     [/sunrise|sound machine/, 'sunrise'], [/massage|theragun|heating pad/, 'massage']
   ];
-  const HUE = { Baby: 240, Beauty: 350, Clothing: 320, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, Drinks: 175, Christmas: 150, Travel: 220, Food: 45, Books: 290, Sports: 120, Pets: 25, _: 30 };
+  const HUE = { Baby: 240, Beauty: 350, Clothing: 320, Electronics: 265, Health: 15, Home: 60, Kids: 140, Kitchen: 35, 'Smart Home': 200, Tools: 95, Drinks: 175, Christmas: 150, Travel: 220, Food: 45, Books: 290, Sports: 120, Pets: 25, 'Kitchen Remodel': 15, _: 30 };
   const pick = (cat, title) => {
     const t = String(title || '').toLowerCase();
     for (const [re, k] of RULES) if (re.test(t)) return k;
